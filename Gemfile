@@ -80,6 +80,8 @@ gem 'twitty'
 gem 'koala'
 # slack client
 gem 'slack-ruby-client'
+# LINE bot API
+gem 'line-bot-api', '~> 1.18'
 
 ##--- gems for debugging and error reporting ---##
 # static analysis
