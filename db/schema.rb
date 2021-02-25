@@ -149,6 +149,16 @@ ActiveRecord::Schema.define(version: 2021_02_22_131155) do
     t.index ["page_id"], name: "index_channel_facebook_pages_on_page_id"
   end
 
+  create_table "channel_line_channels", force: :cascade do |t|
+    t.string 'name'
+    t.integer "account_id", null: false
+    t.string "channel_id", null: false
+    t.string "channel_secret", null: false
+    t.string "channel_token", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "channel_twilio_sms", force: :cascade do |t|
     t.string "phone_number", null: false
     t.string "auth_token", null: false
