@@ -15,6 +15,7 @@ RSpec.describe Account do
   it { is_expected.to have_many(:canned_responses).dependent(:destroy) }
   it { is_expected.to have_many(:facebook_pages).class_name('::Channel::FacebookPage').dependent(:destroy) }
   it { is_expected.to have_many(:web_widgets).class_name('::Channel::WebWidget').dependent(:destroy) }
+  it { is_expected.to have_many(:line_channels).class_name('::Channel::LineChannel').dependent(:destroy) }
   it { is_expected.to have_many(:webhooks).dependent(:destroy) }
   it { is_expected.to have_many(:notification_settings).dependent(:destroy) }
   it { is_expected.to have_many(:events) }
