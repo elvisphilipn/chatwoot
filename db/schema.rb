@@ -150,7 +150,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_131155) do
   end
 
   create_table "channel_line_channels", force: :cascade do |t|
-    t.string 'name'
+    t.string "name"
     t.integer "account_id", null: false
     t.string "channel_id", null: false
     t.string "channel_secret", null: false

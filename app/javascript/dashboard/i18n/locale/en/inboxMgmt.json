@@ -122,6 +122,37 @@
           "ERROR_MESSAGE": "We were not able to authenticate Twilio credentials, please try again"
         }
       },
+      "LINE": {
+        "TITLE": "LINE Channel",
+        "DESC": "Integrate LINE and start supporting your customers.",
+        "CHANNEL_ID": {
+          "LABEL": "Channel ID",
+          "PLACEHOLDER": "Please enter your LINE Channel ID",
+          "ERROR": "This field is required"
+        },
+        "CHANNEL_NAME": {
+          "LABEL": "Channel Name",
+          "PLACEHOLDER": "Please enter your LINE Channel Name",
+          "ERROR": "This field is required"
+        },
+        "CHANNEL_SECRET": {
+          "LABEL": "Channel Secret",
+          "ERROR": "Please enter your Channel Secret"
+        },
+        "CHANNEL_TOKEN": {
+          "LABEL": "Channel Token",
+          "PLACEHOLDER": "Please enter your LINE Channel Token",
+          "ERROR": "Please enter your Channel Token"
+        },
+        "API_CALLBACK": {
+          "TITLE": "Callback URL",
+          "SUBTITLE": "You have to configure the message callback URL in LINE with the URL mentioned here."
+        },
+        "SUBMIT_BUTTON": "Create LINE Channel",
+        "API": {
+          "ERROR_MESSAGE": "We were not able to authenticate LINE credentials, please try again"
+        }
+      },
       "API_CHANNEL": {
         "TITLE": "API Channel",
         "DESC": "Integrate with API channel and start supporting your customers.",

@@ -122,6 +122,37 @@
           "ERROR_MESSAGE": "Nous n'avons pas pu authentifier les identifiants Twilio, veuillez réessayer"
         }
       },
+      "LINE": {
+        "TITLE": "Canal LINE",
+        "DESC": "Intégrez LINE et commencez à aider vos clients.",
+        "CHANNEL_ID": {
+          "LABEL": "ID du canal",
+          "PLACEHOLDER": "Veuillez entrer le ID de votre canal LINE",
+          "ERROR": "Ce champ est requis"
+        },
+        "CHANNEL_NAME": {
+          "LABEL": "Nom du canal",
+          "PLACEHOLDER": "Veuillez entrer le nom de votre canal LINE",
+          "ERROR": "Ce champ est requis"
+        },
+        "CHANNEL_SECRET": {
+          "LABEL": "Clé secrète du canal",
+          "ERROR": "Veuillez entrer la clé secrète de votre canal LINE"
+        },
+        "CHANNEL_TOKEN": {
+          "LABEL": "Jeton du canal",
+          "PLACEHOLDER": "Veuillez entrer le jeton de votre canal LINE",
+          "ERROR": "Ce champ est requis"
+        },
+        "API_CALLBACK": {
+          "TITLE": "URL de rappel (callback)",
+          "SUBTITLE": "Vous devez configurer l'URL de rappel (callback) du message dans LINE avec l'URL mentionnée ici."
+        },
+        "SUBMIT_BUTTON": "Créer le canal LINE",
+        "API": {
+          "ERROR_MESSAGE": "Nous n'avons pas pu authentifier les identifiants LINE, veuillez réessayer"
+        }
+      },
       "API_CHANNEL": {
         "TITLE": "Canal API",
         "DESC": "Intégrez le canal API et commencez à aider vos clients.",
