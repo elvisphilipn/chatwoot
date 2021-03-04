@@ -139,11 +139,6 @@
           "LABEL": "Channel Secret",
           "ERROR": "Please enter your Channel Secret"
         },
-        "CHANNEL_TOKEN": {
-          "LABEL": "Channel Token",
-          "PLACEHOLDER": "Please enter your LINE Channel Token",
-          "ERROR": "Please enter your Channel Token"
-        },
         "API_CALLBACK": {
           "TITLE": "Callback URL",
           "SUBTITLE": "You have to configure the message callback URL in LINE with the URL mentioned here."

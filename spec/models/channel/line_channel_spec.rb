@@ -13,6 +13,6 @@ RSpec.describe Channel::LineChannel do
   end
 
   it 'has 24 hour messaging window' do
-    expect(channel.has_24_hour_messaging_window).to eq false
+    expect(channel.has_24_hour_messaging_window).to eq true
   end
 end

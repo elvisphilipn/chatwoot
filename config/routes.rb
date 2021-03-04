@@ -44,6 +44,7 @@ Rails.application.routes.draw do
           resources :canned_responses, except: [:show, :edit, :new]
           namespace :channels do
             resource :twilio_channel, only: [:create]
+            resource :line_channel, only: [:create]
           end
           resources :conversations, only: [:index, :create, :show] do
             get 'meta', on: :collection
@@ -204,6 +205,7 @@ Rails.application.routes.draw do
   mount Facebook::Messenger::Server, at: 'bot'
   get 'webhooks/twitter', to: 'api/v1/webhooks#twitter_crc'
   post 'webhooks/twitter', to: 'api/v1/webhooks#twitter_events'
+  post 'webhooks/line', to: 'api/v1/webhooks#line_events'
 
   namespace :twitter do
     resource :callback, only: [:show]

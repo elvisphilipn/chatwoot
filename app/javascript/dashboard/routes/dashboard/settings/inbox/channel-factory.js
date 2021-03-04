@@ -4,6 +4,7 @@ import Twitter from './channels/Twitter';
 import Twilio from './channels/Twilio';
 import Api from './channels/Api';
 import Email from './channels/Email';
+import Line from './channels/Line';
 
 const channelViewList = {
   facebook: Facebook,
@@ -12,6 +13,7 @@ const channelViewList = {
   twilio: Twilio,
   api: Api,
   email: Email,
+  line: Line,
 };
 
 export default {

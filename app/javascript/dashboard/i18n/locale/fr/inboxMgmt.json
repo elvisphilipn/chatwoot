@@ -139,11 +139,6 @@
           "LABEL": "Clé secrète du canal",
           "ERROR": "Veuillez entrer la clé secrète de votre canal LINE"
         },
-        "CHANNEL_TOKEN": {
-          "LABEL": "Jeton du canal",
-          "PLACEHOLDER": "Veuillez entrer le jeton de votre canal LINE",
-          "ERROR": "Ce champ est requis"
-        },
         "API_CALLBACK": {
           "TITLE": "URL de rappel (callback)",
           "SUBTITLE": "Vous devez configurer l'URL de rappel (callback) du message dans LINE avec l'URL mentionnée ici."

@@ -51,6 +51,9 @@
                 <span v-if="item.channel_type === 'Channel::Api'">
                   Api
                 </span>
+                <span v-if="item.channel_type === 'Channel::LineChannel'">
+                  LINE
+                </span>
               </td>
 
               <!-- Action Buttons -->

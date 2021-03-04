@@ -68,7 +68,7 @@ export default {
       if (key === 'email') {
         return this.enabledFeatures.channel_email;
       }
-      return ['website', 'twilio', 'api'].includes(key);
+      return ['website', 'twilio', 'api', 'line'].includes(key);
     },
   },
   methods: {
