@@ -3,7 +3,7 @@ class Api::V1::Accounts::Channels::LineChannelsController < Api::V1::Accounts::B
 
   def initialize
     super
-    @expires = Time.now.utc
+    @expires = DateTime.now.new_offset(0)
   end
 
   def create
@@ -33,14 +33,15 @@ class Api::V1::Accounts::Channels::LineChannelsController < Api::V1::Accounts::B
   end
 
   def channel_token
-    @response = client.issue_channel_token
-    raise StandardError, @response.message unless @response.code == '200'
+    response = client.issue_channel_token
+    raise StandardError, response.message unless response.code == '200'
 
-    @json_body = JSON.parse(@response.body)
-    @token = @json_body['access_token']
-    client.channel_token = @token
-    @expires += @json_body['expires_in']
-    @token
+    json_body = JSON.parse(response.body)
+    token = json_body['access_token']
+    client.channel_token = token
+    @expires += json_body['expires_in'].seconds
+
+    token
   end
 
   def build_inbox
@@ -57,7 +58,7 @@ class Api::V1::Accounts::Channels::LineChannelsController < Api::V1::Accounts::B
   end
 
   def setup_webhooks
-    ::Twilio::WebhookSetupService.new(inbox: @inbox).perform
+    ::Line::WebhookSetupService.new(inbox: @inbox).perform
   end
 
   def permitted_params

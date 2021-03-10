@@ -5,6 +5,7 @@ FactoryBot.define do
     channel_id { SecureRandom.uuid }
     channel_secret { SecureRandom.uuid }
     channel_token { SecureRandom.uuid }
+    token_expires_at { DateTime.now }
     account
   end
 end

@@ -11,6 +11,10 @@
 #  account_id       :integer          not null
 #  channel_id       :string           not null
 #
+# Indexes
+#
+#  index_channel_line_channels_on_account_id_and_channel_id  (account_id,channel_id) UNIQUE
+#
 class Channel::LineChannel < ApplicationRecord
   self.table_name = 'channel_line_channels'
 
