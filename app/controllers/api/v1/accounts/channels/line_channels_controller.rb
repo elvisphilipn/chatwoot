@@ -21,34 +21,10 @@ class Api::V1::Accounts::Channels::LineChannelsController < Api::V1::Accounts::B
     authorize ::Inbox
   end
 
-  def client
-    @client ||= Line::Bot::Client.new do |config|
-      config.channel_id = permitted_params[:channel_id]
-      config.channel_secret = permitted_params[:channel_secret]
-      config.http_options = {
-        open_timeout: 5,
-        read_timeout: 5
-      }
-    end
-  end
-
-  def channel_token
-    response = client.issue_channel_token
-    raise StandardError, response.message unless response.code == '200'
-
-    json_body = JSON.parse(response.body)
-    token = json_body['access_token']
-    client.channel_token = token
-    @expires += json_body['expires_in'].seconds
-
-    token
-  end
-
   def build_inbox
     @line_channel = Current.account.line_channels.create!(
       channel_id: permitted_params[:channel_id],
-      channel_token: channel_token,
-      token_expires_at: Time.at(@expires).utc.to_datetime,
+      channel_token: permitted_params[:channel_token],
       channel_secret: permitted_params[:channel_secret]
     )
     @inbox = Current.account.inboxes.create(
@@ -63,7 +39,7 @@ class Api::V1::Accounts::Channels::LineChannelsController < Api::V1::Accounts::B
 
   def permitted_params
     params.require(:line_channel).permit(
-      :channel_id, :channel_secret, :name
+      :channel_id, :channel_token, :channel_secret, :name
     )
   end
 end

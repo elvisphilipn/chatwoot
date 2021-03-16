@@ -36,6 +36,21 @@
       </div>
 
       <div class="medium-8 columns">
+        <label :class="{ error: $v.channelToken.$error }">
+          {{ $t('INBOX_MGMT.ADD.LINE.CHANNEL_TOKEN.LABEL') }}
+          <input
+            v-model.trim="channelToken"
+            type="text"
+            :placeholder="$t('INBOX_MGMT.LINE.CHANNEL_TOKEN.PLACEHOLDER')"
+            @blur="$v.channelToken.$touch"
+          />
+          <span v-if="$v.channelToken.$error" class="message">{{
+            $t('INBOX_MGMT.ADD.LINE.CHANNEL_TOKEN.ERROR')
+          }}</span>
+        </label>
+      </div>
+
+      <div class="medium-8 columns">
         <label :class="{ error: $v.channelSecret.$error }">
           {{ $t('INBOX_MGMT.ADD.LINE.CHANNEL_SECRET.LABEL') }}
           <input
@@ -75,6 +90,7 @@ export default {
   data() {
     return {
       channelID: '',
+      channelToken: '',
       channelSecret: '',
       channelName: '',
     };
@@ -87,6 +103,7 @@ export default {
   validations: {
     channelName: { required },
     channelID: { required },
+    channelToken: { required },
     channelSecret: { required },
   },
   methods: {
@@ -103,6 +120,7 @@ export default {
             line_channel: {
               name: this.channelName,
               channel_id: this.channelID,
+              channel_token: this.channelToken,
               channel_secret: this.channelSecret,
             },
           }
